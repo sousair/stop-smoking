@@ -1,0 +1,29 @@
+services:
+  stop:
+    image: stop-smoking
+    container_name: stop-smoking
+    build:
+      context: ../
+      dockerfile: ./build/Dockerfile.dev
+    ports:
+      - 42069:80
+    depends_on:
+      - redis
+    networks:
+      - stop-smoking
+    volumes:
+      - ../:/app
+
+  redis:
+    image: redis:6.2-alpine
+    container_name: redis
+    restart: always
+    command: redis-server --save 20 1 --loglevel warning
+    ports:
+      - 6379:6379
+    networks:
+      - stop-smoking
+
+networks:
+  stop-smoking:
+    driver: bridge
