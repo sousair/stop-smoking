@@ -20,17 +20,17 @@ func (s *StartProgramForm) FieldPrompts() ([]update.FormFieldPrompt, error) {
 		},
 		{
 			Name:   "WakeUpHour",
-			Prompt: "What time do you usually wake up?",
+			Prompt: "What time do you usually wake up? [0-23]",
 			Order:  2,
 		},
 		{
 			Name:   "SleepHour",
-			Prompt: "What time do you usually go to sleep?",
+			Prompt: "What time do you usually go to sleep? [0-23]",
 			Order:  3,
 		},
 		{
 			Name:   "SmokeToSleep",
-			Prompt: "Do you NEED to smoke before going to sleep? Yes or No",
+			Prompt: "Do you NEED to smoke before going to sleep? [yes/no]",
 			Order:  4,
 		},
 	}, nil

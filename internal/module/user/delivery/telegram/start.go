@@ -19,7 +19,7 @@ func (t *TelegramHandler) NewStartBotHandler(ctx context.Context) UpdateTelegram
 		fmt.Printf("[StartHandler] Received [START] msg! [%d] %s\n", identifier, name)
 
 		if err := t.deps.Usecase.CreateUser(ctx, &core.User{
-			Idendifier: identifier,
+			Identifier: identifier,
 			Name:       name,
 		}); err != nil {
 			return err

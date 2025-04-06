@@ -22,7 +22,7 @@ func (t TelegramHandler) NewStartProgramFormFilled(ctx context.Context) UpdateFo
 
 		formData := form.Data
 
-		if err := t.deps.Usecase.StartProgram(ctx, &core.StartProgramRequest{
+		if err := t.deps.Usecase.UserMetadataSent(ctx, &core.UserMetadataSentRequest{
 			Identifier:       identifier,
 			CigarettesPerDay: formData.CigarettesPerDay,
 			WakeUpHour:       formData.WakeUpHour,

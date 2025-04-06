@@ -7,8 +7,9 @@ import (
 )
 
 type Dependencies struct {
-	UserRepo         repository.Repository[core.User]
 	DailyProgramRepo core.DailyProgramRepository
+	UserRepo         repository.Repository[core.User]
+	UserProgramRepo  repository.Repository[core.UserProgram]
 	EventEmitter     event.EventEmitter
 }
 

@@ -14,7 +14,7 @@ var (
 
 func (u Usecase) CreateUser(ctx context.Context, req *core.User) error {
 	user, err := u.deps.UserRepo.FindOne(ctx, &core.User{
-		Idendifier: req.Idendifier,
+		Identifier: req.Identifier,
 	})
 	if err != nil {
 		if err != database.ErrNotFound {
